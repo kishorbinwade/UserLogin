@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            SignUp
+        </title>
+    </head>
+    <body>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="username">
+            <br>
+            <input type="password" name="password" placeholder="password"> <br>
+             
+            <!-- {{form.as_p}} -->
+            
+            <br>
+            <button type="submit">SignUp</button>
+            <br><br>
+            <a href="{% url 'register' %}">Register</a> <br>
+
+
+
+            {% if messages %}
+            {% for msg in messages %}
+            <b>{{msg}}</b>
+            {% endfor %}
+            {% endif %}    
+
+        </form>    
+
+    </body>
+</html>
